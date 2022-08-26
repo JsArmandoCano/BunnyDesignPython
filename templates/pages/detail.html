@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="detail_product">
+        <div class="detail_products_imgs">
+            <img src="{{ single_product.img.url }}" class="change" alt="{{ single_product.slug }}">
+        </div>
+
+        <div class="detail_product_text">
+            <div class="detail_text_content">
+                <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_JvPPeJ.json" class="lottie-rabit" background="transparent"  speed="1"  style="width: 120px; height: 120px;"  loop  autoplay></lottie-player>
+                <h2>{{ single_product.product_name }}</h2>
+                <h4>Categoria: <span>{{ single_product.category }}</span></h4>
+                <p>{{ single_product.description }}</p>
+            </div>
+        </div>
+    </section>
+
+
+    {% if product_gallery %}
+        <section class="gallery d-flex">
+            <div class="img_gal" onclick="imgSlider('{{ single_product.img.url }}')">
+                <img src="{{ single_product.img.url }}" alt="{{ single_product.slug }}">
+            </div>
+
+            {% for item in product_gallery %}
+                <div class="img_gal" onclick="imgSlider('{{ item.image.url }}')">
+                    <img src="{{ item.image.url }}" alt="{{ item.slug }}">
+                </div>
+            {% endfor %}
+        </section>
+
+        <script>
+            function imgSlider(anything){
+                document.querySelector(".change").src = anything;
+            }
+        </script>
+    {% endif %}
+
+{% endblock %}

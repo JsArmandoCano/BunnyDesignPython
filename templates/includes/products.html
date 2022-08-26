@@ -1,0 +1,103 @@
+{% load static %}
+
+<!-- Products -->
+<section class="m-5" id="products">
+    <main>
+        <div class="row g-5">
+            <aside class="col-md-5 col-lg-4 order-md-last">
+
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">Categorías</span>
+                </h4>
+
+                <hr>
+                
+                <div class="select-menu active position-sticky" style="top: 100px;">
+                    <div class="select-btn">
+                        <span class="sBtn-text">Selecciona</span>
+                        <i class="bx bx-chevron-down"></i>
+                    </div>
+            
+                    <ul class="options">
+                        {% if cat != None %}
+                            <a class="option" style="text-decoration: none;" href="../#products">
+                                <i class="fas fa-fill-drip text-success"></i>
+                                <span class="option-text">Todos</span>
+                            </a>
+                            {% for category in categories %}
+                                <a class="option" style="text-decoration: none;" href="{{ category.get_url }}#products">
+                                    <i class="{{ category.icon }} text-success"></i>
+                                    <span class="option-text">{{ category.category }}</span>
+                                </a>
+                            {% endfor %}
+
+                        {% else %}
+                            {% for category in categories %}
+                                <a class="option" style="text-decoration: none;" href="{{ category.get_url }}#products">
+                                    <i class="{{ category.icon }} text-success"></i>
+                                    <span class="option-text">{{ category.category }}</span>
+                                </a>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+
+                </div>
+            </aside>
+
+
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Productos
+                    <span class="badge bg-primary rounded-pill">{{ products_count }}</span>
+                </h4>
+
+                <hr>
+
+                <div class="card-content d-flex justify-content-center flex-wrap">
+                    {% for product in products %}
+                        <div class="card m-2" style="width: 18rem;">
+                            <img src="{{ product.img.url }}" class="card-img-top" alt="{{ product.slug }}">
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <h2 class="card-title text-center">{{ product.product_name }}</h2>
+                                <p class="card-text text-center">{{ product.description }}</p>
+                                <a href="{{ product.get_url_new }}" class="btn btn-outline-primary">Más Detalles</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Paginador -->
+                <nav aria-label="Page navigation example">
+                    {% if products.has_other_pages %}
+
+                        <ul class="pagination justify-content-center">
+                            {% if products.has_previous %}
+                                <li class="page-item"><a class="page-link" href="?page={{ products.previous_page_number }}#products">Anterior</a></li>
+                            {% else %}
+                                <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+                            {% endif %}
+
+
+                            {% for i in products.paginator.page_range %}
+                                {% if products.number == i %}
+                                    <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                {% else %}
+                                    <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            
+
+                            {% if products.has_next %}
+                                <li class="page-item"><a class="page-link" href="?page={{ products.next_page_number }}#products">Siguiente</a></li>
+                            {% else %}
+                                <li class="page-item disabled"><a class="page-link" href="#">Siguiente</a></li>   
+                            {% endif %}
+                        </ul>
+
+                    {% endif %}
+                </nav>
+                
+            </div>
+
+        </div>
+    </main>
+</section>

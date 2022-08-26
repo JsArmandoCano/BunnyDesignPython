@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Preloader -->
+    <div id="preloader">
+        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_AQEOul.json"  
+                       background="transparent"  
+                       speed="1"  
+                       style="width: 300px; height: 300px;"  
+                       loop autoplay>
+        </lottie-player>
+    </div>
+
+
+    <!-- Si hay mensajes -->
+    {% if messages %}
+        <div class="messages animate__animated animate__jackInTheBox animate__delay-1s">
+            {% for message in messages %}
+                <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <img src="{% static 'images/logo-bunny.jpeg' %}" class="animate__animated animate__bounceInDown" alt="Logo">
+        <div class="container">
+            <div class="masthead-subheading">Bienvenido a mi Estudio!</div>
+            <div class="masthead-heading text-uppercase animate__animated animate__jackInTheBox animate__delay-1s">Diseñadora de Ideas</div>
+        </div>
+    </header>
+
+
+
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Categorías</h2>
+                <h3 class="section-subheading text-muted">Elige con qué quieres sorprender hoy.</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x" data-aos="flip-left">
+                        <i class="fas fa-circle fa-stack-2x" style="color: #9FFFB8;"></i>
+                        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Tarjetas</h4>
+                    <p class="text-muted">Tarjetas personalizadas para cumpleaños, día del amor y la amistad, navidad, temáticas, invitaciones, y lo que tú imagines.</p>
+                </div>
+
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x" data-aos="flip-right">
+                        <i class="fas fa-circle fa-stack-2x" style="color: #FFF89E;"></i>
+                        <i class="fas fa-cut fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Manualidades</h4>
+                    <p class="text-muted">Trabajos con madera, tela, material reciclable, piñatas, trabajos escolares, maquetas, etc.</p>
+                </div>
+
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x" data-aos="flip-up">
+                        <i class="fas fa-circle fa-stack-2x text-info"></i>
+                        <i class="fas fa-paint-brush fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Dibujos y Pinturas</h4>
+                    <p class="text-muted">Tus personajes favoritos, retratos de caricatura, paisajes, logos, carteles, y mucho más.</p>
+                </div>
+
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x" data-aos="flip-down">
+                        <i class="fas fa-circle fa-stack-2x" style="color: #FA9AE4;"></i>
+                        <i class="fas fa-tshirt fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Pintura en Tela</h4>
+                    <p class="text-muted">Diseño de estampado en tela como playeras, tenis, gorras, chamarras, sudaderas, morrales, juegos de baño, y más.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Frase -->
+    <section class="page-section" id="phrase">
+        <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="{% static 'videos/video.mp4' %}" type="video/mp4" /></video>
+        <div class="capa-blur"></div>
+        <div class="phrase-content" data-aos="fade-right">
+            <h2>"La tecnología hace posible lo que antes era imposible. El diseño hace que sea real."</h2>
+            <small>— Michael Gagliano</small>
+        </div>
+    </section>
+
+
+
+    <!-- Portfolio Grid-->
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Portafolio</h2>
+                <h3 class="section-subheading text-muted">Recopilación de algunos de mis trabajos más destacados.</h3>
+            </div>
+
+            <div class="row">
+                {% for item in favorite %}
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <div class="portfolio-link">
+                                <img class="img-fluid" src="{{ item.image.url }}" alt="Project" />
+                            </div>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">{{ item.title }}</div>
+                                <div class="portfolio-caption-subheading text-muted">{{ item.category }}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <!-- About-->
+    <section class="page-section" id="about">
+        <div class="container">
+
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Sobre Mi</h2>
+                <h3 class="section-subheading text-muted">Conoce un poco más de mí y de mi trabajo.</h3>
+            </div>
+
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'images/home/about/1.jpeg' %}" alt="..." /></div>
+                    <div class="timeline-panel" data-aos="fade-up-right">
+                        <div class="timeline-heading">
+                            <h4>2005</h4>
+                            <h4 class="subheading">Mis Primeros Pasos</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Todo comenzó desde que era niña, siempre me sentí atraída por crear, y se me daba al natural, pedían un trabajo escolar creativo y yo lo hacía con mucha facilidad. Llevaba clase de pintura en la escuela primaria, desde ahí supe que tenía talento para esto.</p></div>
+                    </div>
+                </li>
+
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'images/home/about/4.jpeg' %}" alt="..." /></div>
+                    <div class="timeline-panel" data-aos="fade-up-left">
+                        <div class="timeline-heading">
+                            <h4>2006 - 2012</h4>
+                            <h4 class="subheading">Secundaria y Prepa</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Siguiendo con ese rumbo artístico, cuando entré a la secundaria tomé los talleres de artes plásticas y de corte y confección. En la preparatoria, en la materia de informática aprendía a hacer páginas web, usar Photoshop y CorelDraw, fue el descubrimiento del diseño digital para mí.</p></div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'images/home/about/3.jpeg' %}" alt="..." /></div>
+                    <div class="timeline-panel" data-aos="fade-up-right">
+                        <div class="timeline-heading">
+                            <h4>2013 - 2017</h4>
+                            <h4 class="subheading">Etapa Universitaria</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Decidí alejarme del área del diseño, entré a la univerdad a estudiar la licenciatura en Nutrición, sin embargo, nunca dejé de crear y diseñar, en mis tiempos libres dibujaba, en las clases aburridas hacía dibujos en las hojas de atrás de mis cuadernos, siempre tenía eso presente. En vacaciones me puse a diseñar y a hacer tarjetas de cumpleaños, Navidad, cualquier cosa que me pidieran y las vendía, es así como estuve siempre con la cabeza en el diseño.</p></div>
+                    </div>
+                </li>
+
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'images/home/about/2.jpeg' %}" alt="..." /></div>
+                    <div class="timeline-panel" data-aos="fade-up-left">
+                        <div class="timeline-heading">
+                            <h4>2022</h4>
+                            <h4 class="subheading">De Acuerdo al Comic</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Sucedió literalmente de un día para otro, pero fue la mejor decisión que he tomado en mi vida, estudiar Diseño Digital y Animación, a lo que mi primo llamó: de acuerdo al comic, haciendo una alusión a que ya voy de acuerdo a la historia que es mía. En eso estoy, y aunque me falta mucho por mejorar no dudo que lograré concluir esto para diseñar por el resto de mi vida.</p></div>
+                    </div>
+                </li>
+
+                <li class="timeline-inverted" data-aos="zoom-in">
+                    <div class="timeline-image">
+                        <h4>
+                            Sigo 
+                            <br />
+                            diseñando mi
+                            <br />
+                            historia.
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+
+    
+    <!-- Contact-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Contactame</h2>
+                <h3 class="section-subheading text-muted">Para cotización, dudas o comentarios de mi trabajo.</h3>
+            </div>
+
+            <form action="/register-contact/" id="contactForm" method="POST" >
+                {% csrf_token %}
+                <div class="row align-items-stretch mb-5">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <!-- Name input-->
+                            <input class="form-control" id="name" name="name" type="text" placeholder="Tu Nombre *" maxlength="60" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- Email address input-->
+                            <input class="form-control" id="email" name="email" type="email" placeholder="Tu Email *" maxlength="60" required />
+                        </div>
+
+                        <div class="form-group mb-md-0">
+                            <!-- Phone number input-->
+                            <input class="form-control" id="phone" name="phone" type="tel" placeholder="Tu Numero *" min="1" max="10" required />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group form-group-textarea mb-md-0">
+                            <!-- Message input-->
+                            <textarea class="form-control" id="message" name="message" placeholder="Tu Mensaje *" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Submit Button-->
+                <div class="text-center"><input class="btn btn-dark btn-xl text-uppercase" id="submitButton" type="submit" value="Enviar Mensaje" /></div>
+            </form>
+
+        </div>
+    </section>
+
+
+    <script>
+        
+    </script>
+{% endblock %}

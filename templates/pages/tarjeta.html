@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <lottie-player src="https://assets4.lottiefiles.com/private_files/lf30_n5n2u73t.json"  
+                    background="transparent"  
+                    speed="1"  
+                    style="width: 300px; height: 300px;"  
+                    loop autoplay>
+        </lottie-player>
+    </div>
+
+
+    <!-- Masthead-->
+    <header class="masthead-2">
+        <div class="container px-4 px-lg-5 h-100" style="z-index: 2;">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold" style="text-transform: uppercase;">TARJETAS</h1>
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Tarjetas personalizadas para cumpleaños, día del amor y la amistad, navidad, temáticas, invitaciones, y lo que tú imagines.</p>
+                    <a class="btn btn-outline-danger" style="font-size: 20px;" href="#products">Explorar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    {% include 'includes/products.html' %}
+
+
+    <!-- Frase 2 -->
+    <section class="phrase-content-cat">
+        <div class="icon">
+            <img src="{% static 'images/category/card-love.png' %}" id="icon-card" alt="Card">
+        </div>
+        <div class="text-haz" data-aos="flip-up">
+            <h2>Haz tu pedido.</h2>  
+        </div>
+    </section>
+
+
+    {% include 'includes/commits.html' %}
+
+{% endblock %}

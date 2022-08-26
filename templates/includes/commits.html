@@ -1,0 +1,65 @@
+{% load static %}
+
+<!-- Si hay mensajes -->
+{% if messages %}
+<div class="messages animate__animated animate__jackInTheBox animate__delay-1s">
+    {% for message in messages %}
+        <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} &#128525;</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Testimonios -->
+<section class="testimonials">
+    <div class="form-content">
+        <h2>DEJA UN COMENTARIO</h2>
+        <hr>
+        <form action="" method="post" id="form_commit">
+            {% csrf_token %}
+
+            <div class="input-box">
+                {{ form.name }}
+            </div>
+
+            <div class="input-box">
+                {{ form.last_name }}
+            </div>
+
+            <div class="input-box">
+                {{ form.rank }}
+            </div>
+
+            {{ form.description }}
+
+            <div class="input-box button">
+                <input type="Submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+
+    <div class="testimonials-content">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                
+                {% for comment in fav_commets %}
+                    <div class="swiper-slide">
+                        <div class="test-cont">
+                            <img src="{% static 'images/logo-bunny.jpeg' %}" alt="Person">
+                            <div class="text-test">
+                                <p>{{ comment.description }}</p>
+                            </div>
+                            <h3>{{ comment.name }} {{ comment.last_name }}</h3>
+                            <p class="star">{{ comment.rank }} <i class="fas fa-star"></i></p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        
+        <a href="{% url 'all' %}" class="all btn btn-outline-primary">Ver Todos</a> 
+    </div>
+</section>

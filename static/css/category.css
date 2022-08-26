@@ -1,0 +1,274 @@
+/* Estilos para PreLoader */
+#preloader {
+  background-color: #001e2d;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100000;
+  transition: all 2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Termina estilos de preloader */
+
+
+/* Estilos header */
+header.masthead-2 {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.3) 0%, rgba(0,212,255,0.3) 100%), url("../images/category/bg-tarjeta.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+header.masthead-2 h1, header.masthead-2 .h1 {
+    font-size: 2.25rem;
+}
+
+@media (min-width: 992px) {
+    header.masthead-2 {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 4.5rem;
+      padding-bottom: 0;
+    }
+    header.masthead-2 p {
+      font-size: 1.15rem;
+    }
+    header.masthead-2 h1, header.masthead-2 .h1 {
+      font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    header.masthead-2 h1, header.masthead-2 .h1 {
+      font-size: 3.5rem;
+    }
+}
+
+
+
+header.masthead-3 {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.3) 0%, rgba(0,212,255,0.3) 100%), url("../images/category/bg-man.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+header.masthead-3 h1, header.masthead-3 .h1 {
+    font-size: 2.25rem;
+}
+
+@media (min-width: 992px) {
+    header.masthead-3 {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 4.5rem;
+      padding-bottom: 0;
+    }
+    header.masthead-3 p {
+      font-size: 1.15rem;
+    }
+    header.masthead-3 h1, header.masthead-3 .h1 {
+      font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    header.masthead-3 h1, header.masthead-3 .h1 {
+      font-size: 3.5rem;
+    }
+}
+
+
+
+header.masthead-4 {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.3) 0%, rgba(0,212,255,0.3) 100%), url("../images/category/bg-pin.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+header.masthead-4 h1, header.masthead-4 .h1 {
+    font-size: 2.25rem;
+}
+
+@media (min-width: 992px) {
+    header.masthead-4 {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 4.5rem;
+      padding-bottom: 0;
+    }
+    header.masthead-4 p {
+      font-size: 1.15rem;
+    }
+    header.masthead-4 h1, header.masthead-4 .h1 {
+      font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    header.masthead-4 h1, header.masthead-4 .h1 {
+      font-size: 3.5rem;
+    }
+}
+
+
+
+header.masthead-5 {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.3) 0%, rgba(0,212,255,0.3) 100%), url("../images/category/bg-tela.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+header.masthead-5 h1, header.masthead-5 .h1 {
+    font-size: 2.25rem;
+}
+
+@media (min-width: 992px) {
+    header.masthead-5 {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 4.5rem;
+      padding-bottom: 0;
+    }
+    header.masthead-5 p {
+      font-size: 1.15rem;
+    }
+    header.masthead-5 h1, header.masthead-5 .h1 {
+      font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    header.masthead-5 h1, header.masthead-5 .h1 {
+      font-size: 3.5rem;
+    }
+}
+/* Termina estilos de header */
+
+
+
+/* Empieza estilos frase */
+.phrase-content-cat {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #2193b0;
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0); 
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    display: flex;
+}
+  
+.phrase-content-cat .icon {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    margin-top: -150px;
+    padding-left: 50px;
+}
+  
+#icon-card {
+    position: relative;
+    width: 400px;
+    filter: drop-shadow(-40px 0 30px rgba(0,0,0,0.5));
+}
+  
+.phrase-content-cat .text-haz {
+    width: 60%;
+    height: 100%;
+    padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+  
+.phrase-content-cat .text-haz h2 {
+    font-size: 100px;
+    font-weight: 700;
+    position: relative;
+}
+  
+@media (max-width: 991px) {
+    .phrase-content-cat {
+        height: 350px;
+    }
+    
+    .phrase-content-cat .icon {
+        padding-left: 20px;
+    }
+    
+    #icon-card {
+        width: 250px;
+        margin-top: 50px;
+    }
+    
+    .phrase-content-cat .text-haz {
+        padding-left: 40px;
+    }
+    
+    .phrase-content-cat .text-haz h2 {
+        font-size: 80px;
+    } 
+}
+  
+@media (max-width: 780px) {
+    .phrase-content-cat {
+      height: 350px;
+      flex-direction: column;
+    }
+    
+    .phrase-content-cat .icon {
+        width: 100%;
+        height: 70%;
+        padding-left: 0;
+        margin-top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #icon-card {
+        width: 200px;
+    }
+    
+    .phrase-content-cat .text-haz {
+        width: 100%;
+        height: 30%;
+        padding-left: 0;
+        justify-content: center;
+    }
+    
+    .phrase-content-cat .text-haz h2 {
+      font-size: 50px;
+    }
+}
+  
+@media (max-width:370px) {
+    .phrase-content-cat {
+      height: 250px;
+    }
+      
+    #icon-card {
+      width: 150px;
+    }
+    
+    .phrase-content-cat .text-haz h2 {
+      font-size: 30px;
+    }
+}
+/* Termina estilos frase */

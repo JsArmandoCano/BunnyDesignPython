@@ -1,0 +1,336 @@
+/* Estilos de testimonios */
+.testimonials {
+    width: 100%;
+    height: 600px;
+    margin-top: 40px; 
+    padding: 10px;
+    display: flex;
+}
+  
+.form-content {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    margin-right: 10px;
+}
+  
+.form-content h2 {
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+  
+.form-content form {
+    margin-top: 30px;
+}
+  
+.form-content form .input-box {
+    height: 52px;
+    margin: 18px 0;
+}
+  
+form .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #C7BEBE;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+  
+.input-box input:focus,
+.input-box input:valid {
+    border-color: #4070f4;
+}
+  
+form textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #C7BEBE;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+   
+form .policy {
+    display: flex;
+    align-items: center;
+}
+  
+form h3 {
+    color: #707070;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+  
+.input-box.button input {
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    background: #4070f4;
+    cursor: pointer;
+}
+  
+.input-box.button input:hover {
+    background: #0e4bf1;
+}
+  
+form .text h3 {
+   color: #333;
+   width: 100%;
+   text-align: center;
+}
+  
+form .text h3 a {
+    color: #4070f4;
+    text-decoration: none;
+}
+  
+form .text h3 a:hover {
+    text-decoration: underline;
+}
+  
+  
+.testimonials-content {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: #CBDFFF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.swiper {
+    width: 500px;
+    height: 500px;
+    padding: 50px;
+}
+  
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.swiper-slide .test-cont {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .7s all ease;
+}
+  
+.swiper-slide .test-cont:hover {
+    background-color: #000;
+}
+  
+.swiper-slide .test-cont img {
+    position: absolute;
+    top: -50px;
+    left: 150px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    transition: .7s all ease;
+}
+  
+.swiper-slide .test-cont:hover img {
+    border: 3px solid #fff;
+}
+  
+.swiper-slide .test-cont .text-test {
+    padding-top: 30px;
+    text-align: center;
+}
+  
+.swiper-slide .test-cont .text-test p {
+    font-size: 20px;
+    color: #333;
+    transition: .7s all ease;
+}
+  
+.swiper-slide .test-cont:hover .text-test p {
+    color: #fff;
+}
+  
+.swiper-slide .test-cont h3 {
+    margin-top: 0px;
+    color: #0e4bf1;
+}
+  
+.swiper-slide .test-cont .star {
+    font-size: 25px;
+    color: #0e4bf1;
+} 
+
+.all {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+
+
+  
+@media (max-width: 1012px) {
+    .testimonials {
+      height: auto;
+      flex-direction: column;
+    }
+    
+    .form-content {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    
+    
+    .testimonials-content {
+      width: 100%;
+      padding: 20px;
+    }
+}
+  
+@media (max-width: 640px) {
+    .testimonials {
+        padding: 10px;
+    }
+    
+    .form-content {
+        padding: 5px;
+        margin-right: 0;
+    }
+    
+    .form-content h2 {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+        
+    .form-content form {
+        margin-top: 20px;
+    }
+    
+    .testimonials-content {
+        height: 500px;
+    }
+    
+    .swiper {
+        width: 360px;
+        height: 420px;
+        padding: 0;
+    }
+        
+    .swiper-slide {
+        width: 420px;
+        height: 420px;
+    }
+        
+    .swiper-slide .test-cont {
+        width: 300px;
+        height: 350px;
+        padding: 20px;
+    }
+        
+    .swiper-slide .test-cont img {
+        left: 100px;
+    }
+        
+    .swiper-slide .test-cont .text-test {
+        padding-top: 35px;
+    }
+        
+    .swiper-slide .test-cont .text-test p {
+        font-size: 16px;
+    }
+        
+    .swiper-slide .test-cont h3 {
+        margin-top: 5px;
+    }
+        
+    .swiper-slide .test-cont .star {
+        font-size: 20px;
+    } 
+    
+    .all {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+  
+@media (max-width:370px) {
+    .testimonials-content {
+      height: 500px;
+    }
+  
+    .swiper {
+      width: 270px;
+      height: 450px;
+    }
+    
+    .swiper-slide {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .swiper-slide .test-cont {
+      width: 230px;
+      height: 380px;
+      padding: 20px;
+    }
+      
+    .swiper-slide .test-cont img {
+      left: 70px;
+    }
+    
+    .swiper-slide .test-cont .text-test {
+      padding-top: 35px;
+    }
+    
+    .swiper-slide .test-cont .text-test p {
+      font-size: 14px;
+    }
+    
+    .swiper-slide .test-cont h3 {
+      margin-top: 0;
+    }
+    
+    .swiper-slide .test-cont .star {
+      font-size: 20px;
+    } 
+
+    .all {
+        bottom: 5px;
+        right: 5px;
+    }
+}
+/* Termina estilos de testimonios */

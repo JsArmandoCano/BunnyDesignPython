@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <header class="comments_header">
+        <h2 class="animate__animated animate__rubberBand">Comentarios</h2>
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_6PnLAF.json" class="lottie-player" background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+    </header>
+
+
+    {% if commits %}
+        <section class="commits_all">
+            {% for commit in commits %}
+                <div class="content-commit text-center" data-aos="zoom-in">
+                    <div class="profile">
+                        <img src="{% static 'images/logo-bunny.jpeg' %}" class="user" alt="Logo">
+                        <p><span>&ldquo;</span>{{ commit.description }}</p>
+                        <h3>{{ commit.name }} {{ commit.last_name }}</h3>
+                        <p class="star-commit">{{ commit.rank }} <i class="fas fa-star"></i></p>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    
+    {% else %}
+        <section class="commit-none">
+            <h3>No hay Comentarios 😢</h3>
+        </section>
+    {% endif %}
+
+{% endblock %}
